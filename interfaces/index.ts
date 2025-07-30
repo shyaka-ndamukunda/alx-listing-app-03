@@ -1,17 +1,30 @@
 // interfaces/index.ts
-import React from 'react';
+export interface PropertyProps {
+  id: string;
+  image: string;
+  price: string;
+  address: string;
+  beds: number;
+  baths: number;
+  sqft: number;
+  type: string;
+  description: string;
+  category: string[]; // <-- ADDED THIS LINE: Property now has a 'category' array
+}
 
 export interface CardProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'small' | 'medium' | 'large';
+export interface ButtonProps {
+  label: string;
+  onClick?: () => void;
   className?: string;
 }
 
-// Add more interfaces here as your project grows
+export interface PillProps {
+  label: string;
+  onClick: () => void;
+  isActive: boolean;
+}

@@ -1,13 +1,13 @@
 // components/common/Card.tsx
 import React from 'react';
-import { CardProps } from '@/interfaces'; // This import will work once interfaces/index.ts is created
+import { CardProps } from '@/interfaces';
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
+// IMPORTANT: Change this line to be a NAMED export
+export const Card: React.FC<CardProps> = ({ children, className }) => {
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 ${className || ''}`}>
+    <div className={`bg-white rounded-lg shadow-md p-4 ${className || ''}`}>
       {children}
     </div>
   );
 };
-
-export default Card;
+// If you had 'export default Card;' previously, make sure it's removed.
